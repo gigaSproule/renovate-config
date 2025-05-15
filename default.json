@@ -1,0 +1,62 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "assigneesFromCodeOwners": true,
+  "labels": [
+    "dependencies"
+  ],
+  "onboardingConfig": {
+    "extends": [
+      "local>gigaSproule/renovate-config"
+    ]
+  },
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true,
+    "automergeType": "pr",
+    "platformAutomerge": true,
+    "autoApprove": true
+  },
+  "packageRules": [
+    {
+      "matchDepPatterns": [
+        "^@mui"
+      ],
+      "automerge": true,
+      "automergeType": "pr",
+      "platformAutomerge": true,
+      "autoApprove": true
+    },
+    {
+      "matchDepNames": [
+        "yarn"
+      ],
+      "automerge": true,
+      "automergeType": "pr",
+      "platformAutomerge": true,
+      "autoApprove": true
+    },
+    {
+      "excludeDepNames": [
+        "yarn"
+      ],
+      "excludeDepPatterns": [
+        "^@mui"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true,
+      "automergeType": "pr",
+      "platformAutomerge": true,
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch",
+      "autoApprove": true
+    }
+  ],
+  "reviewersFromCodeOwners": true
+}

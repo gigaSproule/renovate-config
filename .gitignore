@@ -1,0 +1,6 @@
+### Intellij template
+.idea/
+*.iml
+*.ipr
+*.iws
+.DS_Store
